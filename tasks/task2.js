@@ -2,10 +2,19 @@
 //  при цьому пропускаючи всі цифри.
 
 function reverseWithoutNumbers(str) {
-  // Ваш код тут
+   let finStr=[];
+   for(let i =0;i<str.length;i++){
+     finStr[i]= str[str.length-(i+1)];
+    }
+  const newStr = [];
+  const numbers = '0123456789';
+  for(let i = 0; i < finStr.length; i++) {
+    if (!numbers.includes(finStr[i])) {
+      newStr.push(finStr[i]);
+    }
+  }
+  console.log(newStr.join());
+  return newStr.join('');
 }
-
-console.log(reverseWithoutNumbers("hello123world456")); // Виведе: "dlrowolleh"
-console.log(reverseWithoutNumbers("abc123xyz"));       // Виведе: "zyxabc"
-
+reverseWithoutNumbers("hello123world456");
 module.exports = reverseWithoutNumbers;
